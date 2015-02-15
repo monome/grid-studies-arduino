@@ -2,13 +2,13 @@
 
 By design the monome grid does nothing on it's own. You the user assign it purpose and meaning: instrument, experiment, tool, toy... choose your own adventure. This grid is *intended* to be reimagined. Here we set forth to impart some introductory knowledge: potential energy for radical creative freedom.
 
-Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.
+Arduino is an open-source electronics platform based on easy-to-use hardware and software. It is intended for anyone making interactive projects.
 
 We'll be using the Ardunio's USB Host capabilities to run grid code without a computer, with easy access to physical hardware: sensors, motors, other actuators, wireless bits, everything. 
 
 ## Prerequisites
 
-If you're very new to Arduino, it will be very beneficial to work through the 'getting started' section at Arduino.cc: [arduino.cc/en/Guide/HomePage](http://arduino.cc/en/Guide/HomePage)
+If you're very new to Arduino, it will be very beneficial to work through the 'Getting Started' section at Arduino.cc: [arduino.cc/en/Guide/HomePage](http://arduino.cc/en/Guide/HomePage)
 
 Be sure you have Arduino version 1.6.0 or later. **It is required.**
 
@@ -65,7 +65,7 @@ We're ready to go.
 
 *See grid-studies-1.ino for this section.*
 
-The MonomeHost library facilitates easy connection and communication with grids. First two headers must be included, and then we initialize our grid:
+The MonomeHost library facilitates easy connection and communication with grids. First, two headers must be included, and then we initialize our grid:
 
 ```c++
 #include <Usb.h>  
@@ -161,7 +161,7 @@ We change the state of an LED by using the function:
 monome.led_set(x, y, z);
 ```
 
-This changes the LED at position `(x,y)` to state `z`, where `z` is 0 to 15. 0 is off 15 is full brightness.
+This changes the LED at position `(x,y)` to state `z`, where `z` is 0 to 15. 0 is off 15 is full brightness, with 14 dimmed levels in between.
 
 The grid is not physically refreshed until you explicitly call:
 
@@ -240,7 +240,7 @@ That'll get us started.
 
 *See grid-studies-3-2.ino for this step.*
 
-First we need a clock. We'll make a quick (read: slightly sloppy) clock using `millis()`. First a few variables:
+Now we need a clock. We'll make a quick (read: slightly sloppy) clock using `millis()`. First a few variables:
 
 ```c++
 unsigned long t = millis();
@@ -256,7 +256,7 @@ if(millis() - t > interval) {
 }
 ```
 
-Each time this is called, the current time is compared to the last recorded (`t`) to see if it has reached `interval`. If so, we reset `t` to the current time and call `next()`, which will process the next sequence step.
+Each time this is called, the current time is compared to the last recorded `t` to see if it has reached `interval`. If so, we reset `t` to the current time and call `next()`, which will process the next sequence step.
 
 You can change the speed by altering the value of `interval`. The value is roughly the number of milliseconds in between steps-- so smaller values will make the sequencer go faster.
 
