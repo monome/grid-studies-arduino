@@ -445,13 +445,13 @@ pre[class*="language-"] {
 
 <p>By design the monome grid does nothing on it&#39;s own. You the user assign it purpose and meaning: instrument, experiment, tool, toy... choose your own adventure. This grid is <em>intended</em> to be reimagined. Here we set forth to impart some introductory knowledge: potential energy for radical creative freedom.</p>
 
-<p>Arduino is an open-source electronics platform based on easy-to-use hardware and software. It&#39;s intended for anyone making interactive projects.</p>
+<p>Arduino is an open-source electronics platform based on easy-to-use hardware and software. It is intended for anyone making interactive projects.</p>
 
 <p>We&#39;ll be using the Ardunio&#39;s USB Host capabilities to run grid code without a computer, with easy access to physical hardware: sensors, motors, other actuators, wireless bits, everything. </p>
 
 <h2 id="toc_1">Prerequisites</h2>
 
-<p>If you&#39;re very new to Arduino, it will be very beneficial to work through the &#39;getting started&#39; section at Arduino.cc: <a href="http://arduino.cc/en/Guide/HomePage">arduino.cc/en/Guide/HomePage</a></p>
+<p>If you&#39;re very new to Arduino, it will be very beneficial to work through the &#39;Getting Started&#39; section at Arduino.cc: <a href="http://arduino.cc/en/Guide/HomePage">arduino.cc/en/Guide/HomePage</a></p>
 
 <p>Be sure you have Arduino version 1.6.0 or later. <strong>It is required.</strong></p>
 
@@ -462,6 +462,8 @@ pre[class*="language-"] {
 <p>Download the code examples here: <a href="https://github.com/monome/grid-studies-arduino/releases/latest">github.com/monome/grid-studies-arduino/releases/latest</a></p>
 
 <h2 id="toc_2">Hardware</h2>
+
+<p><strong><a href="http://market.monome.org">Grid Kits on sale now for Arduino Day!</a></strong></p>
 
 <p>There are innumerable versions of the Arduino hardware.</p>
 
@@ -507,7 +509,7 @@ pre[class*="language-"] {
 
 <p><em>See grid-studies-1.ino for this section.</em></p>
 
-<p>The MonomeHost library facilitates easy connection and communication with grids. First two headers must be included, and then we initialize our grid:</p>
+<p>The MonomeHost library facilitates easy connection and communication with grids. First, two headers must be included, and then we initialize our grid:</p>
 
 <pre><code class="language-cpp">#include &lt;Usb.h&gt;  
 #include &quot;MonomeController.h&quot;
@@ -589,7 +591,7 @@ z : state (1 = key down, 0 = key up)</code></pre>
 
 <pre><code class="language-cpp">monome.led_set(x, y, z);</code></pre>
 
-<p>This changes the LED at position <code>(x,y)</code> to state <code>z</code>, where <code>z</code> is 0 to 15. 0 is off 15 is full brightness.</p>
+<p>This changes the LED at position <code>(x,y)</code> to state <code>z</code>, where <code>z</code> is 0 to 15. 0 is off 15 is full brightness, with 14 dimmed levels in between.</p>
 
 <p>The grid is not physically refreshed until you explicitly call:</p>
 
@@ -659,7 +661,7 @@ if(z == 1 &amp;&amp; y &lt; 6) {
 
 <p><em>See grid-studies-3-2.ino for this step.</em></p>
 
-<p>First we need a clock. We&#39;ll make a quick (read: slightly sloppy) clock using <code>millis()</code>. First a few variables:</p>
+<p>Now we need a clock. We&#39;ll make a quick (read: slightly sloppy) clock using <code>millis()</code>. First a few variables:</p>
 
 <pre><code class="language-cpp">unsigned long t = millis();
 unsigned long interval = 200;</code></pre>
@@ -671,7 +673,7 @@ unsigned long interval = 200;</code></pre>
     next();
 }</code></pre>
 
-<p>Each time this is called, the current time is compared to the last recorded (<code>t</code>) to see if it has reached <code>interval</code>. If so, we reset <code>t</code> to the current time and call <code>next()</code>, which will process the next sequence step.</p>
+<p>Each time this is called, the current time is compared to the last recorded <code>t</code> to see if it has reached <code>interval</code>. If so, we reset <code>t</code> to the current time and call <code>next()</code>, which will process the next sequence step.</p>
 
 <p>You can change the speed by altering the value of <code>interval</code>. The value is roughly the number of milliseconds in between steps-- so smaller values will make the sequencer go faster.</p>
 
