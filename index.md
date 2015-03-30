@@ -20,8 +20,6 @@ Download the code examples here: [github.com/monome/grid-studies-arduino/release
 
 ## Hardware
 
-**[Grid Kits on sale now for Arduino Day!](http://market.monome.org)**
-
 There are innumerable versions of the Arduino hardware.
 
 **Ardunio Due required.** Other variants will not work. You can get them at the [Arduino Store](http://store.arduino.cc/product/A000062) and at various [distributors](http://arduino.cc/en/Main/Buy).
