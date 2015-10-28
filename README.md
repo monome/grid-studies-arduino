@@ -1,3 +1,3 @@
 # Grid Studies: Arduino
 
-[monome.org/grid-studies-arduino](http://monome.org/grid-studies-arduino)
+[monome.org/docs/grid-studies-arduino](http://monome.org/docs/grid-studies/arduino/)
